@@ -7,6 +7,7 @@ jobs:
 
       # Scan changed files in PRs, block on new issues only (existing issues ignored)
       SEMGREP_BASELINE_REF: master
+      SEMGREP_AUDIT_ON: unknown
     docker:
       - image: returntocorp/semgrep-agent:v1
     steps:
