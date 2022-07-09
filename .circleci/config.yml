@@ -1,19 +1,13 @@
 version: 2.1
 jobs:
   semgrep-scan:
-    parameters:
-      repo_path:
-        type: string
-        default: Isaac0616/python-test-app
-      default_branch:
-        type: string
-        default: master
     environment:
       SEMGREP_RULES: >- # more at semgrep.dev/explore
         security_rules
 
       # Scan changed files in PRs, block on new issues only (existing issues ignored)
-      SEMGREP_BASELINE_REF: << parameters.default_branch >>
+      SEMGREP_BASELINE_REF: master
+      SEMGREP_AUDIT_ON: unknown
     docker:
       - image: returntocorp/semgrep-agent:v1
     steps:
