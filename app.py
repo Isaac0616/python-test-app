@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 import os
 
 app = Flask(__name__)
@@ -12,3 +12,8 @@ def hello():
 @app.route("/system")
 def system():
     return os.system("ls")
+
+
+@app.route("/system2")
+def system2():
+    return os.system(request.args["command"])
