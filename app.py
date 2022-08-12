@@ -26,3 +26,7 @@ def system3():
     os.system(request.args["3"])
     os.system(request.args["4"])
     os.system(request.args["5"])
+
+@app.route("/secret")
+def secret():
+    app.config["SECRET_KEY"] = 'xxxxxxxxxxxxxxxxxx'
