@@ -30,3 +30,5 @@ def system3():
 @app.route("/secret")
 def secret():
     app.config["SECRET_KEY"] = 'xxxxxxxxxxxxxxxxxx'
+    app.config["SECRET_KEY"] = 'xxxxxxxxxxxxxxxxxx'
+    app.config["SECRET_KEY"] = '1'
